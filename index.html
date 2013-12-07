@@ -6,20 +6,62 @@
     <title>View Switcher Demo</title>
   </head>
   <body>
-    <form class="login view" data-login="true" method="GET" action="#">
-      <div class="loginField">
+    <form class="form" data-registration="true" method="POST" action="#">
+      <div class="registrationField">
+        <label for="name">
+          Name: 
+        </label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div class="formField">
+        <label for="email">
+          Email: 
+        </label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div class="formField">
         <label for="username">
           Username: 
         </label>
         <input type="text" name="username" id="username" />
       </div>
-      <div class="loginField">
+      <div class="formField">
         <label for="password">
           Password: 
         </label>
         <input type="password" name="password" id="password" />
       </div>
-      <input type="submit" value="Login!" />
+      <div class="formField">
+        <label for="retypePassword">
+          Retype password: 
+        </label>
+        <input type="password" name="retypePassword" id="retypePassword" />
+      </div>
+      <input type="submit" name="submit" value="Register!" />
+    </form>
+    <form class="form" data-forgotPassword="true" method="POST" action="#">
+      <label for="email">
+        Enter email to receive your new password: 
+      </label>
+      <input type="email" name="email" id="email" />
+      <input type="submit" name="submit" value="Submit!" />
+    </form>
+    <form class="form view" data-login="true" method="POST" action="#">
+      <div class="formField">
+        <label for="username">
+          Username: 
+        </label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div class="formField">
+        <label for="password">
+          Password: 
+        </label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <a data-registrationButton="true" href="#">Register</a>
+      <a data-forgotPasswordButton="true" href="#">Forgot password</a>
+      <input type="submit" name="submit" value="Login!" />
     </form>
     <ul class="tabs">
       <li class="tab">

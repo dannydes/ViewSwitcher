@@ -1,4 +1,4 @@
-.login, .logout, .tab, .tabContent { display: none; }
+.form, .logout, .tab, .tabContent { display: none; }
 .logout { background-color: rgb(0, 255, 0); }
 .view { display: block; }
 
