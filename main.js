@@ -1,0 +1,3 @@
+$( '.tab' ).viewSwitcher({
+  views: '.tabContent'
+});

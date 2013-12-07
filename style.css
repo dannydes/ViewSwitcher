@@ -1,0 +1,14 @@
+.login, .logout, .tab, .tabContent { display: none; }
+.logout { background-color: rgb(0, 255, 0); }
+.view { display: block; }
+
+.tab {
+    background-color: rgb(0, 100, 255);
+    color: rgb(255, 255, 255);
+}
+
+.logout.view, .tab.view {
+    list-style-type: none;
+    display: inline;
+    margin: 20px;
+}
