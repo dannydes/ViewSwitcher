@@ -1,4 +1,4 @@
-(function ( $ ) {
+(function ( $, False, undefined ) {
 
 'use strict';
 
@@ -26,13 +26,10 @@ $.fn.viewSwitcher = function ( options ) {
   
   $login.submit(function () {
     if ( options.loggedIn === undefined || options.loggedIn() ) {
-      $login.removeClass( viewClass );
-      $views.removeClass( viewClass );
-      $tabs.addClass( viewClass );
-      $logout.addClass( viewClass );
-      $( options.home ).add( DATA_ATTR_START + 'home' + DATA_ATTR_END ).addClass( viewClass );
+      $login.add( $views ).removeClass( viewClass );
+      $tabs.add( $logout ).add( options.home ).add( DATA_ATTR_START + 'home' + DATA_ATTR_END ).addClass( viewClass );
     }
-    return false;
+    return False;
   });
   
   $( options.forgotPasswordButton )
@@ -45,7 +42,7 @@ $.fn.viewSwitcher = function ( options ) {
   $forgotPassword.submit(function () {
     $forgotPassword.removeClass( viewClass );
     $login.addClass( viewClass );
-    return false;
+    return False;
   });
   
   $( options.registrationButton )
@@ -60,17 +57,15 @@ $.fn.viewSwitcher = function ( options ) {
       $registration.removeClass( viewClass );
       $login.addClass( viewClass );
     }
-    return false;
+    return False;
   });
   
   $logout.click(function () {
-    $views.removeClass( viewClass );
-    $tabs.removeClass( viewClass );
-    $logout.removeClass( viewClass );
+    $views.add( $tabs).add( $logout ).removeClass( viewClass );
     $login.addClass( viewClass );
   });
   
   return this;
 };
 
-})( jQuery );
+})( jQuery, false );
